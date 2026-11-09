@@ -10,6 +10,18 @@ A hands-on PyTorch learning project built around real office sensor measurements
 
 These results describe the included checkpoint on the supplied test split, not guaranteed performance in other rooms.
 
+## Internship report and analysis
+
+The [five-page Turkish project report](report/oda_doluluk_proje_raporu.pdf) includes
+three exploratory data views, model rationale, evaluation, and analysis of actual
+errors. An [editable Markdown version](report/oda_doluluk_proje_raporu.md) and
+[reproduction instructions](analysis/README.md) are also available.
+
+A fixed Logistic Regression baseline trained only on the training split achieved
+**98.51% accuracy and 96.43% F1** on the same final test. The MLP has higher recall
+(99.37% vs. 95.46%), while the baseline has higher precision (97.41% vs. 94.96%).
+This is a comparison of fixed models, not test-based hyperparameter tuning.
+
 ## Quick start
 
 Use Python 3.11 and run the following commands from the project directory. A virtual environment is recommended.

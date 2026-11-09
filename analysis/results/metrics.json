@@ -1,0 +1,384 @@
+{
+  "checkpoint_sha256": "262dc0bfdebbf203a721a634d61c62f5ce5ce1d7e61d1b1a05248fd198834c86",
+  "features": [
+    "Temperature",
+    "Humidity",
+    "Light",
+    "CO2",
+    "HumidityRatio"
+  ],
+  "versions": {
+    "python": "3.11.9",
+    "torch": "2.14.1+cpu",
+    "numpy": "1.26.4",
+    "sklearn": "1.8.0",
+    "matplotlib": "3.10.9"
+  },
+  "baseline": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "random_state": 42,
+    "iterations": 12
+  },
+  "splits": {
+    "train": {
+      "n": 8143,
+      "occupied": 1729,
+      "unoccupied": 6414,
+      "occupied_rate": 0.2123296082524868,
+      "start": "2015-02-04 17:51:00",
+      "end": "2015-02-10 09:33:00",
+      "missing_or_nonfinite": 0,
+      "duplicate_timestamps": 0,
+      "min": {
+        "Temperature": 19.0,
+        "Humidity": 16.745,
+        "Light": 0.0,
+        "CO2": 412.75,
+        "HumidityRatio": 0.00267412691390407
+      },
+      "max": {
+        "Temperature": 23.18,
+        "Humidity": 39.1175,
+        "Light": 1546.33333333333,
+        "CO2": 2028.5,
+        "HumidityRatio": 0.00647601323671025
+      }
+    },
+    "validation": {
+      "n": 2665,
+      "occupied": 972,
+      "unoccupied": 1693,
+      "occupied_rate": 0.3647279549718574,
+      "start": "2015-02-02 14:19:00",
+      "end": "2015-02-04 10:43:00",
+      "missing_or_nonfinite": 0,
+      "duplicate_timestamps": 0,
+      "min": {
+        "Temperature": 20.2,
+        "Humidity": 22.1,
+        "Light": 0.0,
+        "CO2": 427.5,
+        "HumidityRatio": 0.00330331447223472
+      },
+      "max": {
+        "Temperature": 24.4083333333333,
+        "Humidity": 31.4725,
+        "Light": 1697.25,
+        "CO2": 1402.25,
+        "HumidityRatio": 0.00537775883971339
+      }
+    },
+    "test": {
+      "n": 9752,
+      "occupied": 2049,
+      "unoccupied": 7703,
+      "occupied_rate": 0.21011074651353567,
+      "start": "2015-02-11 14:48:00",
+      "end": "2015-02-18 09:19:00",
+      "missing_or_nonfinite": 0,
+      "duplicate_timestamps": 0,
+      "min": {
+        "Temperature": 19.5,
+        "Humidity": 21.865,
+        "Light": 0.0,
+        "CO2": 484.666666666667,
+        "HumidityRatio": 0.00327476397660048
+      },
+      "max": {
+        "Temperature": 24.39,
+        "Humidity": 39.5,
+        "Light": 1581.0,
+        "CO2": 2076.5,
+        "HumidityRatio": 0.00576860834754997
+      }
+    }
+  },
+  "metrics": {
+    "train": {
+      "mlp": {
+        "accuracy": 0.9877195136927422,
+        "precision": 0.9497515184980674,
+        "recall": 0.9947946790052054,
+        "f1": 0.9717514124293786,
+        "confusion_matrix": [
+          [
+            6323,
+            91
+          ],
+          [
+            9,
+            1720
+          ]
+        ],
+        "loss": 0.042596485465765
+      },
+      "logistic_regression": {
+        "accuracy": 0.9860002456097261,
+        "precision": 0.9493600445186422,
+        "recall": 0.9866975130133024,
+        "f1": 0.9676687464549064,
+        "confusion_matrix": [
+          [
+            6323,
+            91
+          ],
+          [
+            23,
+            1706
+          ]
+        ]
+      },
+      "always_unoccupied": {
+        "accuracy": 0.7876703917475132,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            6414,
+            0
+          ],
+          [
+            1729,
+            0
+          ]
+        ]
+      }
+    },
+    "validation": {
+      "mlp": {
+        "accuracy": 0.9786116322701689,
+        "precision": 0.9463414634146341,
+        "recall": 0.9979423868312757,
+        "f1": 0.971457185778668,
+        "confusion_matrix": [
+          [
+            1638,
+            55
+          ],
+          [
+            2,
+            970
+          ]
+        ],
+        "loss": 0.07698585838079453
+      },
+      "logistic_regression": {
+        "accuracy": 0.9771106941838649,
+        "precision": 0.9470068694798822,
+        "recall": 0.992798353909465,
+        "f1": 0.9693621295831241,
+        "confusion_matrix": [
+          [
+            1639,
+            54
+          ],
+          [
+            7,
+            965
+          ]
+        ]
+      },
+      "always_unoccupied": {
+        "accuracy": 0.6352720450281426,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            1693,
+            0
+          ],
+          [
+            972,
+            0
+          ]
+        ]
+      }
+    },
+    "test": {
+      "mlp": {
+        "accuracy": 0.9875922887612797,
+        "precision": 0.9496268656716418,
+        "recall": 0.9936554416788678,
+        "f1": 0.9711423801574052,
+        "confusion_matrix": [
+          [
+            7595,
+            108
+          ],
+          [
+            13,
+            2036
+          ]
+        ],
+        "loss": 0.06943698227405548
+      },
+      "logistic_regression": {
+        "accuracy": 0.9851312551271534,
+        "precision": 0.9741035856573705,
+        "recall": 0.9546120058565154,
+        "f1": 0.9642593049051023,
+        "confusion_matrix": [
+          [
+            7651,
+            52
+          ],
+          [
+            93,
+            1956
+          ]
+        ]
+      },
+      "always_unoccupied": {
+        "accuracy": 0.7898892534864643,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            7703,
+            0
+          ],
+          [
+            2049,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "train_class_medians": {
+    "0": {
+      "Temperature": 20.2,
+      "Humidity": 26.1875,
+      "Light": 0.0,
+      "CO2": 446.0,
+      "HumidityRatio": 0.0037789844354339302
+    },
+    "1": {
+      "Temperature": 21.7675,
+      "Humidity": 26.4425,
+      "Light": 454.0,
+      "CO2": 944.0,
+      "HumidityRatio": 0.0043470257795977
+    }
+  },
+  "train_iqr_outliers": {
+    "Temperature": 0,
+    "Humidity": 0,
+    "Light": 15,
+    "CO2": 1063,
+    "HumidityRatio": 118
+  },
+  "error_groups": {
+    "TN": {
+      "n": 7595,
+      "median": {
+        "Temperature": 20.5666666666667,
+        "Humidity": 30.29,
+        "Light": 0.0,
+        "CO2": 585.0,
+        "HumidityRatio": 0.00454581469606991
+      },
+      "near_transition_2min": 44
+    },
+    "FP": {
+      "n": 108,
+      "median": {
+        "Temperature": 21.4175,
+        "Humidity": 27.445,
+        "Light": 361.25,
+        "CO2": 862.75,
+        "HumidityRatio": 0.00446427635392131
+      },
+      "near_transition_2min": 39
+    },
+    "FN": {
+      "n": 13,
+      "median": {
+        "Temperature": 23.7,
+        "Humidity": 25.3233333333333,
+        "Light": 279.333333333333,
+        "CO2": 603.666666666667,
+        "HumidityRatio": 0.00443671649794104
+      },
+      "near_transition_2min": 13
+    },
+    "TP": {
+      "n": 2036,
+      "median": {
+        "Temperature": 21.89,
+        "Humidity": 29.0,
+        "Light": 447.5,
+        "CO2": 895.875,
+        "HumidityRatio": 0.004767883285266989
+      },
+      "near_transition_2min": 71
+    }
+  },
+  "transition_definition": "Within 120 seconds of the first row with a changed test label; retrospective descriptive analysis only.",
+  "error_examples": [
+    {
+      "type": "FP",
+      "date": "2015-02-11 15:23:59",
+      "light": 436.5,
+      "co2": 1047.0,
+      "probability": 0.9658468961715698,
+      "actual": 0,
+      "predicted": 1
+    },
+    {
+      "type": "FP",
+      "date": "2015-02-11 15:24:59",
+      "light": 434.0,
+      "co2": 1031.0,
+      "probability": 0.9627493023872375,
+      "actual": 0,
+      "predicted": 1
+    },
+    {
+      "type": "FP",
+      "date": "2015-02-11 15:26:00",
+      "light": 432.75,
+      "co2": 977.5,
+      "probability": 0.9534661173820496,
+      "actual": 0,
+      "predicted": 1
+    },
+    {
+      "type": "FN",
+      "date": "2015-02-11 18:23:59",
+      "light": 279.333333333333,
+      "co2": 585.0,
+      "probability": 0.28481388092041016,
+      "actual": 1,
+      "predicted": 0
+    },
+    {
+      "type": "FN",
+      "date": "2015-02-12 10:38:00",
+      "light": 289.0,
+      "co2": 795.75,
+      "probability": 0.06231335550546646,
+      "actual": 1,
+      "predicted": 0
+    },
+    {
+      "type": "FN",
+      "date": "2015-02-12 12:42:59",
+      "light": 522.0,
+      "co2": 728.666666666667,
+      "probability": 0.41640952229499817,
+      "actual": 1,
+      "predicted": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Additional analysis/report workflow; the original application is unchanged.
+torch>=2.0
+numpy>=1.24
+scikit-learn>=1.4
+matplotlib>=3.9
+reportlab>=4.0
